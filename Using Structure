@@ -1,0 +1,28 @@
+#include<stdio.h>
+//Size of Struct employee 38 byte
+struct Employee
+{
+	char name[ 30 ];
+	int empid;
+	float salary;
+};
+void accept_record( struct Employee *ptr )
+{
+	printf("Name	:	");
+	scanf("%s",ptr->name);
+	printf("Empid	:	");
+	scanf("%d",&ptr->empid);
+	printf("Salary	:	");
+	scanf("%f",&ptr->salary);
+}
+void print_record( struct Employee *ptr )
+{
+	printf("%-15s%-5d%-10.2f\n", ptr->name, ptr->empid, ptr->salary);
+}
+int main( void )
+{
+	struct Employee emp;
+	accept_record( &emp );
+	print_record( &emp );
+	return 0;
+}
