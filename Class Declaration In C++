@@ -1,0 +1,35 @@
+#include<stdio.h>
+class Employee
+{
+private:
+	//Data Member / Field / Attribute / Property
+	char name[ 30 ];
+	int empid;
+	float salary;
+public:
+	//Member Function / Method / Operation / Behaviour / Message
+	void accept_record( void )
+	{
+		printf("Name	:	");
+		scanf("%s",name);
+		printf("Empid	:	");
+		scanf("%d",&empid);
+		printf("Salary	:	");
+		scanf("%f",&salary);
+	}
+	void print_record( void )
+	{
+		printf("%-15s%-5d%-10.2f\n", name, empid, salary);
+	}
+};
+int main( void )
+{
+	//class Employee emp;	//Instantiation : Ok
+	Employee emp;	//Instantiation
+
+	emp.accept_record(  );	//emp.accept_record( &emp );
+
+	emp.print_record(  );	//emp.print_record( &emp );
+
+	return 0;
+}
