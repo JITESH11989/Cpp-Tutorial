@@ -1,0 +1,36 @@
+#include<stdio.h>
+struct Employee
+{
+private:
+	char name[ 30 ];
+	int empid;
+	float salary;
+
+public:
+	void accept_record( void )
+	{
+		printf("Name	:	");
+		scanf("%s",name);
+		printf("Empid	:	");
+		scanf("%d",&empid);
+		printf("Salary	:	");
+		scanf("%f",&salary);
+	}
+	void print_record( void )
+	{
+		printf("%-15s%-5d%-10.2f\n", name, empid, salary);
+	}
+};
+
+int main( void )
+{
+	Employee emp;
+    /*this is c style */
+	//emp.accept_record( &emp );
+  //emp.print_record( &emp );
+  
+  emp.accept_record(  );  
+	emp.salary = -50000;
+	emp.print_record(  );
+	return 0;
+}
